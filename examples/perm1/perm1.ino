@@ -5,6 +5,8 @@
 //
 // PUPROSE: demo permutations
 //
+
+
 char permstring[12] = "123456789A";
 
 uint32_t start, stop;

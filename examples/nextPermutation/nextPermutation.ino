@@ -6,7 +6,9 @@
 //    DATE: 2020-07-01
 //     URL: https://github.com/RobTillaart/statHelpers
 
+
 #include "statHelpers.h"
+
 
 char hello[] = "abcde";
 uint32_t count = 0;
@@ -14,6 +16,7 @@ uint32_t count = 0;
 uint8_t score[] = { 1, 2, 3, 4, 5, 6 };
 uint8_t score2[] = { 1, 2, 3, 4, 5, 6 };
 uint32_t start, duration1;
+
 
 void setup()
 {
