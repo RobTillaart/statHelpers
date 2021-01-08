@@ -66,10 +66,10 @@ unittest(test_permutations)
 {
   fprintf(stderr, "\nVERSION: %s\n", STATHELPERS_LIB_VERSION);
 
-  fprintf(stderr, "\n\tpermutations(n, 12)\n");
+  fprintf(stderr, "\n\tpermutations(12, n)\n");
   for (int n = 0; n <= 12; n++)
   {
-    fprintf(stderr, "%d\t%d\n", n, permutations(n, 12));
+    fprintf(stderr, "%d\t%d\n", n, permutations(12, n));
   }
 
   // fprintf(stderr, "\n\tpermutations64(n, 20)\n");
