@@ -31,10 +31,6 @@
 
 #include <ArduinoUnitTests.h>
 
-#define assertEqualFloat(arg1, arg2, arg3)  assertOp("assertEqualFloat", "expected", fabs(arg1 - arg2), compareLessOrEqual, "<=", "actual", arg3)
-// #define assertEqualINF(arg)  assertOp("assertEqualINF", "expected", INFINITY, compareEqual, "==", "actual", arg)
-// #define assertEqualNAN(arg)  assertOp("assertEqualNAN", "expected", true, compareEqual, "==", "actual", isnan(arg))
-
 
 #include "Arduino.h"
 #include "statHelpers.h"
@@ -161,7 +157,7 @@ unittest(test_combinations)
 
   fprintf(stderr, "\n\tcombPascal(30, k)\n");
   for (int k = 0; k <= 30; k++)
- 0 {
+  {
     fprintf(stderr, "%d\t%d\n", k, combPascal(k, 30));
   }
 
