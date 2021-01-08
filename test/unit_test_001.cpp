@@ -110,7 +110,7 @@ unittest(test_factorial)
   fprintf(stderr, "\n\tfactorial64(n)\n");
   for (int n = 12; n <= 20; n++)
   {
-    fprintf(stderr, "%d\t%d\n", n, factorial64(n));
+    fprintf(stderr, "%d\t%ld\n", n, factorial64(n));
   }
 
   fprintf(stderr, "\n\tdfactorial(n)\n");
@@ -138,7 +138,7 @@ unittest(test_combinations)
   fprintf(stderr, "\n\tcombinations64(61, k)\n");
   for (int k = 30; k <= 61; k++)
   {
-    fprintf(stderr, "%d\t%d\n", k, combinations64(61, k));
+    fprintf(stderr, "%d\t%ld\n", k, combinations64(61, k));
   }
 
   fprintf(stderr, "\n\tdcombinations(125, k)\n");
@@ -156,7 +156,7 @@ unittest(test_combinations)
   fprintf(stderr, "\n\trcombinations64(61, k)\n");
   for (int k = 30; k <= 61; k++)
   {
-    fprintf(stderr, "%d\t%d\n", k, rcombinations64(61, k));
+    fprintf(stderr, "%d\t%ld\n", k, rcombinations64(61, k));
   }
 
   fprintf(stderr, "\n\tcombPascal(30, k)\n");
