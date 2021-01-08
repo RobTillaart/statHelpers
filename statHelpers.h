@@ -11,6 +11,8 @@
 #include "Arduino.h"
 
 
+#define STATHELPERS_LIB_VERSION       (F("0.1.1"))
+
 ///////////////////////////////////////////////////////////////////////////
 //
 // PERMUTATIONS
@@ -109,7 +111,7 @@ bool nextPermutation(T * array,  uint16_t size)
 ///////////////////////////////////////////////////////////////////////////
 //
 // FACTORIAL
-// 
+//
 
 // exact ==> 12!
 uint32_t factorial(uint8_t n)
@@ -152,7 +154,7 @@ double stirling(uint8_t n)
 ///////////////////////////////////////////////////////////////////////////
 //
 // COMBINATIONS
-// 
+//
 
 // works for n = 0..30 for all k
 uint32_t combinations(uint16_t n, uint16_t k)
@@ -240,4 +242,4 @@ uint32_t combPascal(uint16_t n, uint16_t k)
   return rv;
 }
 
-// -- END OF FILE -- 
+// -- END OF FILE --
