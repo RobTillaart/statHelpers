@@ -2,7 +2,7 @@
 //
 //    FILE: statHelpers.ino
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.0
+// VERSION: 0.1.1
 // PURPOSE: Arduino library with a number of statistic helper functions.
 //    DATE: 2020-07-01
 //     URL: https://github.com/RobTillaart/statHelpers
@@ -10,6 +10,8 @@
 
 #include "Arduino.h"
 
+
+#define STATHELPERS_LIB_VERSION       (F("0.1.1"))
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -23,12 +25,14 @@ uint32_t permutations(uint8_t n, uint8_t k)
   return rv;
 }
 
+
 uint64_t permutations64(uint8_t n, uint8_t k)
 {
   uint64_t rv = 1;
   for (uint8_t i = n; i > (n - k); i--) rv *= i;
   return rv;
 }
+
 
 double dpermutations(uint8_t n, uint8_t k)
 {
@@ -61,6 +65,7 @@ Since head has increased, we now have a greater permutation. To reduce to the ne
 8344 112666
 Join the head and tail back together. The permutation one greater than 8342666411 is 8344112666.
 */
+
 
 // http://www.nayuki.io/page/next-lexicographical-permutation-algorithm
 
@@ -106,7 +111,7 @@ bool nextPermutation(T * array,  uint16_t size)
 ///////////////////////////////////////////////////////////////////////////
 //
 // FACTORIAL
-// 
+//
 
 // exact ==> 12!
 uint32_t factorial(uint8_t n)
@@ -116,6 +121,7 @@ uint32_t factorial(uint8_t n)
   return f;
 }
 
+
 // exact ==> 20!
 uint64_t factorial64(uint8_t n)
 {
@@ -123,6 +129,7 @@ uint64_t factorial64(uint8_t n)
   for (int i = 2; i <= n; i++) f *= i;
   return f;
 }
+
 
 // float  => 34!
 // double => 170!
@@ -132,6 +139,7 @@ double dfactorial(uint8_t n)
   for (int i = 2; i <= n; i++) f *= i;
   return f;
 }
+
 
 // striling is an approximation function for factorial(n).
 // float  => 26!
@@ -146,7 +154,7 @@ double stirling(uint8_t n)
 ///////////////////////////////////////////////////////////////////////////
 //
 // COMBINATIONS
-// 
+//
 
 // works for n = 0..30 for all k
 uint32_t combinations(uint16_t n, uint16_t k)
@@ -164,6 +172,7 @@ uint32_t combinations(uint16_t n, uint16_t k)
   return rv;
 }
 
+
 // works for n = 0..61 for all k
 uint64_t combinations64(uint16_t n, uint16_t k)
 {
@@ -179,6 +188,7 @@ uint64_t combinations64(uint16_t n, uint16_t k)
   }
   return rv;
 }
+
 
 // experimental - not exact but allows large values
 // float  (4 bits) works till n = 125    for all k
@@ -198,6 +208,7 @@ double dcombinations(uint16_t n, uint16_t k)
   return rv;
 }
 
+
 // recursive (mind your stack)
 // works for n = 0..30 for all k
 uint32_t rcombinations(uint16_t n, uint16_t k)
@@ -207,6 +218,7 @@ uint32_t rcombinations(uint16_t n, uint16_t k)
   return (n * rcombinations(n - 1, k - 1)) / k;
 }
 
+
 // recursive
 // works for n = 0..61 for all k
 uint64_t rcombinations64(uint16_t n, uint16_t k)
@@ -215,6 +227,7 @@ uint64_t rcombinations64(uint16_t n, uint16_t k)
   if (k == 0) return 1;
   return (n * rcombinations64(n - 1, k - 1)) / k;
 }
+
 
 // very slow recursive way by means of Pascals triangle.
 // works for n = 0..30 for all k  (but takes a lot of time)
@@ -229,4 +242,4 @@ uint32_t combPascal(uint16_t n, uint16_t k)
   return rv;
 }
 
-// -- END OF FILE -- 
+// -- END OF FILE --

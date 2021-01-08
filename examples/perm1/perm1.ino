@@ -5,7 +5,17 @@
 //
 // PUPROSE: demo permutations
 //
-char permstring[12] = "123456789A";
+
+
+
+// WARNING TAKES LONG
+// ====================================================================
+// ESP32 @ 240 MHz string len 8  ==> ~8100 millis(mostly printing!!
+// UNO no printing string len 8  ==> ~431 millis
+// UNO no printing string len 10 ==> ~38763 millis
+
+
+char permstring[12] = "0123456789";    // can be made slightly longer
 
 uint32_t start, stop;
 
@@ -13,7 +23,7 @@ void permutate(char * array, uint8_t n)
 {
   if (n == 0) // end reached print the string
   {
-    Serial.println(array);  // process permutation
+    // Serial.println(array);      // process permutation
     return;
   }
 
@@ -25,7 +35,7 @@ void permutate(char * array, uint8_t n)
     array[n - 1] = t;
 
     // permutate substrings
-    permutate(n - 1);
+    permutate(array, n - 1);
 
     // swap back
     t = array[i];
@@ -36,8 +46,9 @@ void permutate(char * array, uint8_t n)
 
 void setup()
 {
-  Serial.begin(115200);
-  Serial.println("Can take some time..");
+  Serial.begin(500000);
+  
+  Serial.println("Will take some time..");
   Serial.print("perm1 strlen: ");
   Serial.println(strlen(permstring));
 
@@ -54,4 +65,3 @@ void loop()
 }
 
 // -- END OF FILE --
-
