@@ -136,13 +136,13 @@ unittest(test_combinations)
   }
 
   fprintf(stderr, "\n\tcombinations64(61, k)\n");
-  for (int k = 1; k <= 31; k++)
+  for (int k = 0; k <= 31; k++)
   {
     fprintf(stderr, "%d\t%ld\n", k, combinations64(61, k));
   }
 
   fprintf(stderr, "\n\tdcombinations(125, k)\n");
-  for (int k = 1; k <= 63; k ++)
+  for (int k = 0; k <= 63; k ++)
   {
     fprintf(stderr, "%d\t%f\n", k, dcombinations(125, k));
   }
@@ -154,7 +154,7 @@ unittest(test_combinations)
   }
 
   fprintf(stderr, "\n\trcombinations64(61, k)\n");
-  for (int k = 1; k <= 31; k++)
+  for (int k = 0; k <= 31; k++)
   {
     fprintf(stderr, "%d\t%ld\n", k, rcombinations64(61, k));
   }
