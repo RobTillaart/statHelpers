@@ -66,108 +66,107 @@ unittest(test_permutations)
 {
   fprintf(stderr, "\nVERSION: %s\n", STATHELPERS_LIB_VERSION);
 
-  fprintf(stderr, "\n\tpermutations(12, n)\n");
-  for (int n = 0; n <= 12; n++)
+  fprintf(stderr, "\n\tpermutations(12, k)\n");
+  for (int k = 0; k <= 12; k++)
   {
-    fprintf(stderr, "%d\t%d\n", n, permutations(12, n));
+    fprintf(stderr, "%d\t%d\n", k, permutations(12, k));
   }
 
-  // fprintf(stderr, "\n\tpermutations64(n, 20)\n");
-  // for (int n = 12; n <= 20; n++)
-  // {
-    // fprintf(stderr, "%d\t%d\n", n, permutations64(n, 20));
-  // }
+  fprintf(stderr, "\n\tpermutations64(20, k)\n");
+  for (int k = 12; k <= 20; k++)
+  {
+    fprintf(stderr, "%d\t%d\n", k, permutations64(20, k));
+  }
 
-  // fprintf(stderr, "\n\tdpermutations(n, 34)\n");
-  // for (int n = 20; n <= 34; n++)
-  // {
-    // fprintf(stderr, "%d\t%f\n", n, dpermutations(n, 34));
-  // }
+  fprintf(stderr, "\n\tdpermutations(34, k)\n");
+  for (int k = 20; k <= 34; k++)
+  {
+    fprintf(stderr, "%d\t%f\n", k, dpermutations(34, k));
+  }
 
-  // fprintf(stderr, "\n120 permutations of abcde");
-  // char text[] = "abcde";
-  // int count = 0;
-  // do
-  // {
-    // fprintf(stderr, "%s\t", text);
-    // count++;
-    // if (count % 5 == 0) fprintf(stderr, "\n");
-  // }
-  // while (nextPermutation<char>(text, 5));
-  // assertEqual(120, count);
+  fprintf(stderr, "\n120 permutations of abcde");
+  char text[] = "abcde";
+  int count = 0;
+  do
+  {
+    fprintf(stderr, "%s\t", text);
+    count++;
+    if (count % 5 == 0) fprintf(stderr, "\n");
+  }
+  while (nextPermutation<char>(text, 5));
+  assertEqual(120, count);
 
-  assertEqual(1, 1);
 }
 
 
-// unittest(test_factorial)
-// {
-  // fprintf(stderr, "\nVERSION: %s\n", STATHELPERS_LIB_VERSION);
+unittest(test_factorial)
+{
+  fprintf(stderr, "\nVERSION: %s\n", STATHELPERS_LIB_VERSION);
 
-  // fprintf(stderr, "\n\tfactorial(n)\n");
-  // for (int n = 0; n <= 12; n++)
-  // {
-    // fprintf(stderr, "%d\t%d\n", n, factorial(n));
-  // }
+  fprintf(stderr, "\n\tfactorial(n)\n");
+  for (int n = 0; n <= 12; n++)
+  {
+    fprintf(stderr, "%d\t%d\n", n, factorial(n));
+  }
 
-  // fprintf(stderr, "\n\tfactorial64(n)\n");
-  // for (int n = 12; n <= 20; n++)
-  // {
-    // fprintf(stderr, "%d\t%d\n", n, factorial64(n));
-  // }
+  fprintf(stderr, "\n\tfactorial64(n)\n");
+  for (int n = 12; n <= 20; n++)
+  {
+    fprintf(stderr, "%d\t%d\n", n, factorial64(n));
+  }
 
-  // fprintf(stderr, "\n\tdfactorial(n)\n");
-  // for (int n = 20; n <= 34; n++)
-  // {
-    // fprintf(stderr, "%d\t%f\t%f\n", n, dfactorial(n), stirling(n));
-  // }
+  fprintf(stderr, "\n\tdfactorial(n)\n");
+  for (int n = 20; n <= 34; n++)
+  {
+    fprintf(stderr, "%d\t%f\t%f\n", n, dfactorial(n), stirling(n));
+  }
 
-  // assertEqual(1, 1);
-// }
+  assertEqual(1, 1);  // keep unit test happy :)
+}
 
 
-// unittest(test_combinations)
-// {
-  // fprintf(stderr, "\nVERSION: %s\n", STATHELPERS_LIB_VERSION);
+unittest(test_combinations)
+{
+  fprintf(stderr, "\nVERSION: %s\n", STATHELPERS_LIB_VERSION);
 
-  // fprintf(stderr, "\n\tcombinations(n, 30)\n");
-  // for (int n = 0; n <= 30; n++)
-  // {
-    // fprintf(stderr, "%d\t%d\n", n, combinations(n, 30));
-  // }
+  fprintf(stderr, "\n\tcombinations(30, k)\n");
+  for (int k = 0; k <= 30; k++)
+  {
+    fprintf(stderr, "%d\t%d\n", k, combinations(30, k));
+  }
 
-  // fprintf(stderr, "\n\tcombinations64(n, 61)\n");
-  // for (int n = 30; n <= 61; n++)
-  // {
-    // fprintf(stderr, "%d\t%d\n", n, combinations64(n, 61));
-  // }
+  fprintf(stderr, "\n\tcombinations64(61, k)\n");
+  for (int k = 30; k <= 61; k++)
+  {
+    fprintf(stderr, "%d\t%d\n", k, combinations64(61, k));
+  }
 
-  // fprintf(stderr, "\n\tdcombinations(n, 125)\n");
-  // for (int n = 61; n <= 125; n += 3)
-  // {
-    // fprintf(stderr, "%d\t%f\n", n, dcombinations(n, 34));
-  // }
+  fprintf(stderr, "\n\tdcombinations(125, k)\n");
+  for (int k = 61; k <= 125; k += 3)
+  {
+    fprintf(stderr, "%d\t%f\n", k, dcombinations(34, k));
+  }
 
-  // fprintf(stderr, "\n\trcombinations(n, 30)\n");
-  // for (int n = 0; n <= 30; n++)
-  // {
-    // fprintf(stderr, "%d\t%d\n", n, rcombinations(n, 30));
-  // }
+  fprintf(stderr, "\n\trcombinations(30, k)\n");
+  for (int k = 0; k <= 30; k++)
+  {
+    fprintf(stderr, "%d\t%d\n", k, rcombinations(30, k));
+  }
 
-  // fprintf(stderr, "\n\trcombinations64(n, 61)\n");
-  // for (int n = 30; n <= 61; n++)
-  // {
-    // fprintf(stderr, "%d\t%d\n", n, rcombinations64(n, 61));
-  // }
+  fprintf(stderr, "\n\trcombinations64(61, k)\n");
+  for (int k = 30; k <= 61; k++)
+  {
+    fprintf(stderr, "%d\t%d\n", k, rcombinations64(61, k));
+  }
 
-  // fprintf(stderr, "\n\tcombPascal(n, 30)\n");
-  // for (int n = 0; n <= 30; n++)
-  // {
-    // fprintf(stderr, "%d\t%d\n", n, combPascal(n, 30));
-  // }
+  fprintf(stderr, "\n\tcombPascal(30, k)\n");
+  for (int k = 0; k <= 30; k++)
+ 0 {
+    fprintf(stderr, "%d\t%d\n", k, combPascal(k, 30));
+  }
 
-  // assertEqual(1, 1);
-// }
+  assertEqual(1, 1);  // keep unit test happy :)
+}
 
 
 unittest_main()
