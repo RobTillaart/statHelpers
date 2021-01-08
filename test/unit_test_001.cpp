@@ -69,13 +69,13 @@ unittest(test_permutations)
   }
 
   fprintf(stderr, "\n\tpermutations64(20, k)\n");
-  for (int k = 12; k <= 20; k++)
+  for (int k = 0; k <= 20; k++)
   {
     fprintf(stderr, "%d\t%ld\n", k, permutations64(20, k));
   }
 
   fprintf(stderr, "\n\tdpermutations(34, k)\n");
-  for (int k = 20; k <= 34; k++)
+  for (int k = 0; k <= 34; k++)
   {
     fprintf(stderr, "%d\t%f\n", k, dpermutations(34, k));
   }
@@ -108,13 +108,13 @@ unittest(test_factorial)
   }
 
   fprintf(stderr, "\n\tfactorial64(n)\n");
-  for (int n = 12; n <= 20; n++)
+  for (int n = 0; n <= 21; n++)
   {
     fprintf(stderr, "%d\t%ld\n", n, factorial64(n));
   }
 
   fprintf(stderr, "\n\tdfactorial(n)\n");
-  for (int n = 20; n <= 34; n++)
+  for (int n = 0; n <= 35; n++)
   {
     fprintf(stderr, "%d\tDFACTORIAL: %f\n", n, dfactorial(n), stirling(n));
     fprintf(stderr, "  \t  STIRLING: %f\n", n, dfactorial(n), stirling(n));
@@ -136,13 +136,13 @@ unittest(test_combinations)
   }
 
   fprintf(stderr, "\n\tcombinations64(61, k)\n");
-  for (int k = 30; k <= 61; k++)
+  for (int k = 1; k <= 31; k++)
   {
     fprintf(stderr, "%d\t%ld\n", k, combinations64(61, k));
   }
 
   fprintf(stderr, "\n\tdcombinations(125, k)\n");
-  for (int k = 61; k <= 125; k += 3)
+  for (int k = 1; k <= 63; k ++)
   {
     fprintf(stderr, "%d\t%f\n", k, dcombinations(125, k));
   }
@@ -154,13 +154,13 @@ unittest(test_combinations)
   }
 
   fprintf(stderr, "\n\trcombinations64(61, k)\n");
-  for (int k = 30; k <= 61; k++)
+  for (int k = 1; k <= 31; k++)
   {
     fprintf(stderr, "%d\t%ld\n", k, rcombinations64(61, k));
   }
 
   fprintf(stderr, "\n\tcombPascal(30, k)\n");
-  for (int k = 0; k <= 30; k++)
+  for (int k = 0; k <= 15; k++)
   {
     fprintf(stderr, "%d\t%d\n", k, combPascal(30, k));
   }
