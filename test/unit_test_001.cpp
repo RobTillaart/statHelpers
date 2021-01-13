@@ -104,9 +104,9 @@ unittest(test_factorial)
   fprintf(stderr, "\n\tdfactorial(n)\n");
   for (int n = 0; n <= 35; n++)
   {
-    fprintf(stderr, "%d\tDFACTORIAL: %f\n", n, dfactorial(n), stirling(n));
-    fprintf(stderr, "  \t  STIRLING: %f\n", n, dfactorial(n), stirling(n));
-    fprintf(stderr, "  \t     RATIO: %f\n", n, dfactorial(n) / stirling(n));
+    fprintf(stderr, "%d\tDFACTORIAL: %f\n", n, dfactorial(n));
+    fprintf(stderr, "  \t  STIRLING: %f\n", stirling(n));
+    fprintf(stderr, "  \t     RATIO: %f\n", dfactorial(n) / stirling(n));
   }
 
   assertEqual(1, 1);  // keep unit test happy :)
