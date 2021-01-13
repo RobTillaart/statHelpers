@@ -13,6 +13,12 @@
 
 #define STATHELPERS_LIB_VERSION       (F("0.1.2"))
 
+
+// TODO
+// Look for optimizations
+// Look for ways to extend the scope
+
+
 ///////////////////////////////////////////////////////////////////////////
 //
 // PERMUTATIONS
@@ -33,7 +39,7 @@ uint64_t permutations64(uint8_t n, uint8_t k)
   return rv;
 }
 
-
+// can be optimized similar to dfactorial
 double dpermutations(uint8_t n, uint8_t k)
 {
   double rv = 1;
@@ -117,7 +123,7 @@ bool nextPermutation(T * array,  uint16_t size)
 uint32_t factorial(uint8_t n)
 {
   uint32_t f = 1;
-  for (int i = 2; i <= n; i++) f *= i;
+  while(n > 1) f *= (n--);
   return f;
 }
 
@@ -125,8 +131,12 @@ uint32_t factorial(uint8_t n)
 // exact ==> 20!
 uint64_t factorial64(uint8_t n)
 {
+  // to be tested
+  // if ( n <= 12) return factorial(12);
+  // uint64_t f = factorial(12);
+  // for (uint8_t t = 13; t <= n; t++) f *= t;
   uint64_t f = 1;
-  for (int i = 2; i <= n; i++) f *= i;
+  while(n > 1) f *= (n--);
   return f;
 }
 
@@ -139,6 +149,7 @@ double dfactorialReference(uint8_t n)
   while (n > 1) f *= (n--);
   return f;
 }
+
 
 // FASTER VERSION 
 // does part of the math with integers.
@@ -162,6 +173,7 @@ double dfactorial(uint8_t n)
 
 
 // stirling is an approximation function for factorial(n).
+// it is slower but constant in time.
 // float  => 26!
 // double => 143!
 double stirling(uint8_t n)
@@ -180,7 +192,7 @@ double stirling(uint8_t n)
 uint32_t combinations(uint16_t n, uint16_t k)
 {
   if ((k == 0) || (k == n)) return 1;
-  if (k < (n-k)) k = n - k; // symmetry
+  if (k < (n-k)) k = n - k;   // symmetry
   uint32_t rv = n;
   uint8_t p = 2;
   for (uint8_t i = n-1; i > k; i--)
@@ -197,12 +209,11 @@ uint32_t combinations(uint16_t n, uint16_t k)
 uint64_t combinations64(uint16_t n, uint16_t k)
 {
   if ((k == 0) || (k == n)) return 1;
-  if (k < (n-k)) k = n - k; // symmetry
+  if (k < (n-k)) k = n - k;   // symmetry
   uint64_t rv = n;
   uint8_t p = 2;
   for (uint8_t i = n-1; i > k; i--)
   {
-
     rv = (rv * i) / p;
     p++;
   }
@@ -221,7 +232,6 @@ double dcombinations(uint16_t n, uint16_t k)
   uint16_t p = 2;
   for (uint16_t i = n-1; i > k; i--)
   {
-
     rv = (rv * i) / p;
     p++;
   }
