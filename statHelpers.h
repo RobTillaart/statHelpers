@@ -2,7 +2,7 @@
 //
 //    FILE: statHelpers.ino
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.1
+// VERSION: 0.1.2
 // PURPOSE: Arduino library with a number of statistic helper functions.
 //    DATE: 2020-07-01
 //     URL: https://github.com/RobTillaart/statHelpers
@@ -11,7 +11,7 @@
 #include "Arduino.h"
 
 
-#define STATHELPERS_LIB_VERSION       (F("0.1.1"))
+#define STATHELPERS_LIB_VERSION       (F("0.1.2"))
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -140,8 +140,24 @@ double dfactorial(uint8_t n)
   return f;
 }
 
+// EXPERIMENTAL FASTER VERSION
+// 
+double dfactorialFast(uint8_t n)
+{
+  double f = 1;
+  while (n > 4)
+  {
+    uint32_t val = n * (n-1);
+    val *= (n-2) * (n-3);
+    f *= val;
+    n -= 4;
+  }
+  while (n > 1) f *= (n--);
+  return f;
+}
 
-// striling is an approximation function for factorial(n).
+
+// stirling is an approximation function for factorial(n).
 // float  => 26!
 // double => 143!
 double stirling(uint8_t n)
