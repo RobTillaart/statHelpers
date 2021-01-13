@@ -133,16 +133,20 @@ uint64_t factorial64(uint8_t n)
 
 // float  => 34!
 // double => 170!
-double dfactorial(uint8_t n)
+double dfactorialReference(uint8_t n)
 {
   double f = 1;
-  for (int i = 2; i <= n; i++) f *= i;
+  while (n > 1) f *= (n--);
   return f;
 }
 
-// EXPERIMENTAL FASTER VERSION
-// 
-double dfactorialFast(uint8_t n)
+// FASTER VERSION 
+// does part of the math with integers.
+// tested on UNO and ESP32, roughly 3x faster
+// numbers differ slightly in the order of IEEE754 precision  => acceptable.
+// 10e-7  for 4 bit float 
+// 10e-16 for 8 bit double
+double dfactorial(uint8_t n)
 {
   double f = 1;
   while (n > 4)
@@ -152,7 +156,7 @@ double dfactorialFast(uint8_t n)
     f *= val;
     n -= 4;
   }
-  while (n > 1) f *= (n--);
+  while (n > 1) f *= (n--); // can be squeezed too.
   return f;
 }
 
