@@ -340,7 +340,7 @@ uint32_t combPascal(uint16_t n, uint16_t k)
 /*
 
 UNO
-n           n!                  millis()
+n           n!                  millis() from earlier version
 -----------------------------------------
 1           1.00000e0           0
 10          3.62880e6           1
@@ -357,7 +357,7 @@ n           n!                  millis()
 10000000                        an hour? too long...
 
 ESP32  240MHz
-n           n!                  millis()
+n           n!                  millis() from earlier version
 -----------------------------------------
 1           1.00000e0           0
 10          3.62880e6           0
@@ -389,20 +389,25 @@ next one should fit too
 */
 
 
-void bigFactorial(uint32_t n, double &mantisse, uint32_t &exponent)
+void bigFactorial(uint32_t n, double &mantissa, uint32_t &exponent)
 {
   exponent = 0;
   double f = 1;
   while (n > 1)
   {
     f *= n--;
-    while (f > 10)
+    while (f > 1000000000)
     {
-      f /= 10;
-      exponent++;
+      f /= 1000000000;
+      exponent += 9;
     }
   }
-  mantisse = f;
+  while (f > 10)  // fix exponent if needed.
+  {
+    f /= 10;
+    exponent++;
+  }
+  mantissa = f;
 }
 
 
@@ -415,24 +420,29 @@ void bigFactorial(uint32_t n, double &mantisse, uint32_t &exponent)
 // P(n,k) ~  raw = log10(n - k/2) * k;
 //           exponent = int(raw);
 //           mantissa = pow(10, raw - int(raw));
-void bigPermutations(uint32_t n, uint32_t k, double &mantisse, uint32_t &exponent)
+void bigPermutations(uint32_t n, uint32_t k, double &mantissa, uint32_t &exponent)
 {
   exponent = 0;
   double f = 1;
   for (uint32_t i = n; i > (n - k); i--)
   {
     f *= i;
-    while (f > 10)
+    while (f > 1000000000)
     {
-      f /= 10;
-      exponent++;
+      f /= 1000000000;
+      exponent += 9;
     }
   }
-  mantisse = f;
+  while (f > 10)  // fix exponent if needed.
+  {
+    f /= 10;
+    exponent++;
+  }
+  mantissa = f;
 }
 
 
-void bigCombinations(uint32_t n, uint32_t k, double &mantisse, uint32_t &exponent)
+void bigCombinations(uint32_t n, uint32_t k, double &mantissa, uint32_t &exponent)
 {
   exponent = 0;
   if ((k == 0) || (k == n)) return;
@@ -444,15 +454,94 @@ void bigCombinations(uint32_t n, uint32_t k, double &mantisse, uint32_t &exponen
   {
     f = (f * i) / p;
     p++;
-    while (f > 10)
+    while (f > 1000000000)
     {
-      f /= 10;
-      exponent++;
+      f /= 1000000000;
+      exponent += 9;
     }
   }
-  mantisse = f;
+  while (f > 10)  // fix exponent if needed.
+  {
+    f /= 10;
+    exponent++;
+  }
+  mantissa = f;
 }
 
+
+////////////////////////////////////////////////////////////
+// EXPERIMENTAL 64 BIT
+//
+
+void bigFactorial(uint64_t n, double &mantissa, uint64_t &exponent)
+{
+  exponent = 0;
+  double f = 1;
+  while (n > 1)
+  {
+    f *= n--;
+    while (f > 1000000000)  // optimize - per 1e9 to save divisions.
+    {
+      f /= 1000000000;
+      exponent += 9;
+    }
+  }
+  while (f > 10)  // fix exponent if needed.
+  {
+    f /= 10;
+    exponent++;
+  }
+  mantissa = f;
+}
+
+
+void bigPermutations64(uint64_t n, uint64_t k, double &mantissa, uint64_t &exponent)
+{
+  exponent = 0;
+  double f = 1;
+  for (uint64_t i = n; i > (n - k); i--)
+  {
+    f *= i;
+    while (f > 1000000000)
+    {
+      f /= 1000000000;
+      exponent += 9;
+    }
+  }
+  while (f > 10)  // fix exponent if needed.
+  {
+    f /= 10;
+    exponent++;
+  }
+  mantissa = f;
+}
+
+
+void bigCombinations64(uint64_t n, uint64_t k, double &mantissa, uint64_t &exponent)
+{
+  exponent = 0;
+  if ((k == 0) || (k == n)) return;
+  if (k < (n-k)) k = n - k; // symmetry
+
+  double f = n;
+  uint64_t p = 2;
+  for (uint64_t i = n-1; i > k; i--)
+  {
+    f = (f * i) / p;
+    p++;
+    while (f > 1000000000)
+    {
+      f /= 1000000000;
+      exponent += 9;
+    }
+  }
+  while (f > 10)  // fix exponent if needed.
+  {
+    f /= 10;
+    exponent++;
+  }
+  mantissa = f;
+}
 
 
 // -- END OF FILE --

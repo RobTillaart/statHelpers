@@ -19,7 +19,7 @@ void setup()
   Serial.begin(115200);
   Serial.println(__FILE__);
 
-  uint32_t m    = 1000;
+  uint32_t m    = 10000001;
   double   mant = 0;
   uint32_t expo = 0;
 
@@ -37,6 +37,7 @@ void setup()
     Serial.print(duration1);
     Serial.println();
   }
+  Serial.println("-----");
   Serial.println();
 
   m    = 5;
@@ -62,7 +63,7 @@ void setup()
   Serial.println();
   Serial.print(m);
   Serial.print('\t');
-  Serial.print(mant, 7);
+  Serial.print(mant, 15);
   Serial.print('e');
   Serial.print(expo);
   Serial.println();
