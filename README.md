@@ -48,6 +48,30 @@ other same code examples exist.
 but accuracy is less than the **dfactorial()**, see example.
 
 
+### SemiFactorial
+
+- **uint32_t semiFactorial(n)** exact up to 20!!
+- **uint64_t semiFactorial64(n)** exact up to 33!!  (Print 64 bit integers with my printHelpers)
+- **double dSemiFactorial(n)** not exact up to 56!! (4 byte) or 300!! (8 byte)
+
+SemiFactorial are defined for
+- **odd** values:  n x (n-2) x (n-4) ... x 1
+- **even** values: n x (n-2) x (n-4) ... x 2
+
+Notes:  
+```n! = n!! x (n-1)!!``` this formula allows to calculate the value of n! indirectly
+
+
+### bigFactorial (experimental)
+
+- **void bigFactorial(uint32_t n, double &mantisse, uint32_t &exponent)**
+
+An experimental factorial calculation to get an idea of the big numbers. it can calculate factorials up to an exponent of 4 billion something.  100.000.000! can be done in 38 minutes on an ESP32 @240 Mhz.  1 Billion fails.
+
+n! ~ 10^((log(n) + 0.5)\*log(n))
+
+
+
 ### Combination
 
 returns how many different ways one can choose a set of k elements 
@@ -82,6 +106,7 @@ It is added to this library as it fits in the context.
 
 - code & example for get Nth Permutation
 - investigate valid range detection for a given (n, k) for combinations and permutations.
+- investigate a bigFloat class to do math for permutations and combinations to substantially larger values.
 
 
 ## Operation
