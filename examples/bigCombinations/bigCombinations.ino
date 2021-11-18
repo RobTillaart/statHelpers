@@ -14,6 +14,7 @@
 uint32_t start, duration1;
 volatile uint32_t x;
 
+
 void setup()
 {
   Serial.begin(115200);
@@ -72,8 +73,11 @@ void setup()
   Serial.println("\nDone...");
 }
 
+
 void loop()
 {
 }
 
+
 // -- END OF FILE --
+

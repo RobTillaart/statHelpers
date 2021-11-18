@@ -19,6 +19,7 @@ char permstring[12] = "0123456789";    // can be made slightly longer
 
 uint32_t start, stop;
 
+
 void permutate(char * array, uint8_t n)
 {
   if (n == 0) // end reached print the string
@@ -44,6 +45,7 @@ void permutate(char * array, uint8_t n)
   }
 }
 
+
 void setup()
 {
   Serial.begin(500000);
@@ -60,8 +62,11 @@ void setup()
   Serial.println(stop - start);
 }
 
+
 void loop()
 {
 }
 
+
 // -- END OF FILE --
+
