@@ -57,7 +57,9 @@ As an example consider finding the next permutation of:
 The longest monotonically decreasing tail is 666411, and the corresponding head is 8342.
 
 8342 666411
-666411 is, by definition, reverse-ordered, and cannot be increased by permuting its elements. To find the next permutation, we must increase the head; a matter of finding the smallest tail element larger than the head’s final 2.
+666411 is, by definition, reverse-ordered, and cannot be increased by permuting its elements.
+To find the next permutation, we must increase the head; a matter of finding the smallest tail
+ element larger than the head’s final 2.
 
 8342 666411
 Walking back from the end of tail, the first element greater than 2 is 4.
@@ -66,7 +68,8 @@ Walking back from the end of tail, the first element greater than 2 is 4.
 Swap the 2 and the 4
 
 8344 666211
-Since head has increased, we now have a greater permutation. To reduce to the next permutation, we reverse tail, putting it into increasing order.
+Since head has increased, we now have a greater permutation. To reduce to the next permutation, 
+we reverse tail, putting it into increasing order.
 
 8344 112666
 Join the head and tail back together. The permutation one greater than 8342666411 is 8344112666.

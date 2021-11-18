@@ -54,7 +54,6 @@ but accuracy is less than the **dfactorial()**, see example.
 
 ### SemiFactorial
 
-<<<<<<< HEAD
 - **uint32_t semiFactorial(n)** exact up to 20!!
 - **uint64_t semiFactorial64(n)** exact up to 33!!  (Print 64 bit integers with my printHelpers)
 - **double dSemiFactorial(n)** not exact up to 56!! (4 byte) or 300!! (8 byte)
@@ -62,22 +61,6 @@ but accuracy is less than the **dfactorial()**, see example.
 SemiFactorial are defined for
 - **odd** values:  n x (n-2) x (n-4) ... x 1
 - **even** values: n x (n-2) x (n-4) ... x 2
-
-Notes:  
-```n! = n!! x (n-1)!!``` this formula allows to calculate the value of n! indirectly
-
-
-### Combinations
-=======
-- **uint32_t semiFactorial(n)** exact up to n = 20.
-- **uint64_t semiFactorial64(n)** exact up to n = 33  (Print 64 bit integers with my printHelpers).
-- **double dSemiFactorial(n)** not exact up to n = 56 (4 byte) or n = 300 (8 byte).
-
-
-Semifactorial is written as n!! and are defined for
-- **odd** values:  n x (n-2) x (n-4) ... x 1
-- **even** values: n x (n-2) x (n-4) ... x 2
->>>>>>> master
 
 Notes:  
 ```n! = n!! x (n-1)!!``` this formula allows to calculate the value of n! indirectly
@@ -116,27 +99,7 @@ It is added to this library as it fits in the context.
 
 ### Experimental - large numbers
 
-<<<<<<< HEAD
-- **void bigFactorial(uint32_t n, double &mantissa, uint32_t &exponent)** returns a double mantissa between 0 and 10, and an integer exponent. 
-- **void bigPermutation(uint32_t n, uint32_t k, double &mantissa, uint32_t &exponent)** returns a double mantissa between 0 and 10, and an integer exponent. 
-- **void bigCombination(uint32_t n, uint32_t k, double &mantissa, uint32_t &exponent)** returns a double mantissa between 0 and 10, and an integer exponent. 
 
-An experimental **bigFactorial(n)** calculation to get an idea of the big numbers. it can calculate factorials up to an exponent of 4294967295 max.  100.000.000! can be done in 38 minutes on an ESP32 @240 Mhz.  Maximum value for n is **518678059! ==  2.1718890e4294967292** a number that took ~10 hrs to calculate. 
-
-An experimental **bigPermutation(n, k)** calculation, to handle big numbers too. Maximum value for n is **518678059** to have full range support. For small(er) values of k, n can even be much larger, but not larger than 4294967295 max.
-
-An experimental **bigCombination(n, k)** calculation for big numbers. Not investigated what its maximum value is, but it should be higher than **518678059** as the number of combinations is always smaller than number of permutations.
-
-
-#### Experimental - not investigated yet
-
-To have support for huge numbers one could upgrade the code to use uint64_t as parameter and internally but calculating these values could take a lot of time, although **bigPermutations64(n, k)** and **bigCombinations64(n, k)** would work fast for small values of k. 
-
-- **void bigFactorial64(uint64_t n, double &mantissa, uint64_t &exponent)** returns a double mantissa between 0 and 10, and an integer exponent. 
-- **void bigPermutation64(uint64_t n, uint64_t k, double &mantissa, uint64_t &exponent)** returns a double mantissa between 0 and 10, and an integer exponent. 
-- **void bigCombination64(uint64_t n, uint64_t k, double &mantissa, uint64_t &exponent)** returns a double mantissa between 0 and 10, and an integer exponent. 
-
-=======
 - **void bigFactorial(uint32_t n, double &mantissa, uint32_t &exponent)** 
 returns a double mantissa between 0 and 10, and an integer exponent. 
 - **void bigPermutation(uint32_t n, uint32_t k, double &mantissa, uint32_t &exponent)** 
@@ -145,24 +108,24 @@ returns a double mantissa between 0 and 10, and an integer exponent.
 returns a double mantissa between 0 and 10, and an integer exponent. 
 
 An experimental **bigFactorial(n)** calculation to get an idea of the big numbers. 
-It can calculate factorials up to an exponent of 4294967295 max.  100.000.000! 
-can be done in 38 minutes on an ESP32 @240 Mhz.  
+it can calculate factorials up to an exponent of 4294967295 max.  100.000.000! can be 
+done in 38 minutes on an ESP32 @240 Mhz.  
 Maximum value for n is **518678059! ==  2.1718890e4294967292** a number that took ~10 hrs to calculate. 
 
 An experimental **bigPermutation(n, k)** calculation, to handle big numbers too. 
-Maximum value for n is **518678059** to have full range support. 
-For small(er) values of k, n can even be much larger, but not larger than **4294967295** max.
+Maximum value for n is **518678059** to have full range support. For small(er) 
+values of k, n can even be much larger, but not larger than 4294967295 max.
 
 An experimental **bigCombination(n, k)** calculation for big numbers. 
-Not investigated what its maximum value is, but it should be higher than **518678059** 
-as the number of combinations is always smaller than number of permutations.
+Not investigated what its maximum value is, but it should be higher than **518678059** as the number 
+of combinations is always smaller than number of permutations.
 
 
-#### Experimental - huge numbers - not investigated yet
+#### Experimental - not investigated yet
 
-To have support for huge numbers one could upgrade the code to use uint64_t 
-as parameter and internally but calculating these values could take a lot of time, 
-although **bigPermutations64(n, k)** and **bigCombinations64(n, k)** would work fast for small values of k. 
+To have support for huge numbers one could upgrade the code to use uint64_t as parameter and 
+internally but calculating these values could take a lot of time, although **bigPermutations64(n, k)** 
+and **bigCombinations64(n, k)** would work fast for small values of k. 
 
 - **void bigFactorial64(uint64_t n, double &mantissa, uint64_t &exponent)** 
 returns a double mantissa between 0 and 10, and an integer exponent. 
@@ -170,7 +133,6 @@ returns a double mantissa between 0 and 10, and an integer exponent.
 returns a double mantissa between 0 and 10, and an integer exponent. 
 - **void bigCombination64(uint64_t n, uint64_t k, double &mantissa, uint64_t &exponent)** 
 returns a double mantissa between 0 and 10, and an integer exponent. 
->>>>>>> master
 
 
 ## Future
