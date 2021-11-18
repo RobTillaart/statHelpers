@@ -7,7 +7,6 @@
 //
 
 
-
 // WARNING TAKES LONG
 // ====================================================================
 // ESP32 @ 240 MHz string len 8  ==> ~8100 millis(mostly printing!!
