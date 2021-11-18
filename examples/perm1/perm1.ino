@@ -7,7 +7,6 @@
 //
 
 
-
 // WARNING TAKES LONG
 // ====================================================================
 // ESP32 @ 240 MHz string len 8  ==> ~8100 millis(mostly printing!!
@@ -18,6 +17,7 @@
 char permstring[12] = "0123456789";    // can be made slightly longer
 
 uint32_t start, stop;
+
 
 void permutate(char * array, uint8_t n)
 {
@@ -44,6 +44,7 @@ void permutate(char * array, uint8_t n)
   }
 }
 
+
 void setup()
 {
   Serial.begin(500000);
@@ -60,8 +61,11 @@ void setup()
   Serial.println(stop - start);
 }
 
+
 void loop()
 {
 }
 
+
 // -- END OF FILE --
+
