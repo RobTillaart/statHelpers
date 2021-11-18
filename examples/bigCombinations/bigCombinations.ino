@@ -14,6 +14,10 @@
 uint32_t start, duration1;
 volatile uint32_t x;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 void setup()
 {
   Serial.begin(115200);
@@ -72,8 +76,18 @@ void setup()
   Serial.println("\nDone...");
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 void loop()
 {
 }
 
+<<<<<<< HEAD
 // -- END OF FILE --
+=======
+
+// -- END OF FILE --
+
+>>>>>>> master

@@ -69,8 +69,18 @@ void setup()
   Serial.println("\n Done...");
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 void loop()
 {
 }
 
+<<<<<<< HEAD
 // -- END OF FILE --
+=======
+
+// -- END OF FILE --
+
+>>>>>>> master

@@ -38,7 +38,6 @@ void setup()
   }
   Serial.println();
 
-  
   Serial.println("PERFORMANCE");
   Serial.println("n\tdfactorial,stirling usec\t values");
   delay(100);
@@ -90,8 +89,11 @@ void setup()
   Serial.println("\n Done...");
 }
 
+
 void loop()
 {
 }
 
+
 // -- END OF FILE --
+
