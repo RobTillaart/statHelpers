@@ -40,7 +40,9 @@
 
 unittest_setup()
 {
+  fprintf(stderr, "\nSTATHELPERS_LIB_VERSION: %s\n", (char *) STATHELPERS_LIB_VERSION);
 }
+
 
 unittest_teardown()
 {
@@ -49,8 +51,6 @@ unittest_teardown()
 
 unittest(test_permutations)
 {
-  fprintf(stderr, "\nSTATHELPERS_LIB_VERSION: %s\n", (char *) STATHELPERS_LIB_VERSION);
-
   fprintf(stderr, "\n\tpermutations(12, k)\n");
   for (int k = 0; k <= 12; k++)
   {
@@ -88,8 +88,6 @@ unittest(test_permutations)
 
 unittest(test_factorial)
 {
-  fprintf(stderr, "\nSTATHELPERS_LIB_VERSION: %s\n", (char *) STATHELPERS_LIB_VERSION);
-
   fprintf(stderr, "\n\tfactorial(n)\n");
   for (int n = 0; n <= 12; n++)
   {
@@ -116,8 +114,6 @@ unittest(test_factorial)
 
 unittest(test_combinations)
 {
-  fprintf(stderr, "\nSTATHELPERS_LIB_VERSION: %s\n", (char *) STATHELPERS_LIB_VERSION);
-
   fprintf(stderr, "\n\tcombinations(30, k)\n");
   for (int k = 0; k <= 30; k++)
   {

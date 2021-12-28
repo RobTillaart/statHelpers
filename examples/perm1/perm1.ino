@@ -2,16 +2,14 @@
 //    FILE: perm1.ino
 //  AUTHOR: Rob Tillaart
 //    DATE: 2010-11-23
-//
 // PUPROSE: demo permutations
 //
-
-
+//
 // WARNING TAKES LONG
-// ====================================================================
-// ESP32 @ 240 MHz string len 8  ==> ~8100 millis(mostly printing!!
-// UNO no printing string len 8  ==> ~431 millis
-// UNO no printing string len 10 ==> ~38763 millis
+// ========================================================================
+// ESP32 @ 240 MHz string length 8  ==> ~8100 milliseconds  => printing!!
+// UNO no printing string length 8  ==> ~431 milliseconds
+// UNO no printing string length 10 ==> ~38763 milliseconds
 
 
 char permstring[12] = "0123456789";    // can be made slightly longer
