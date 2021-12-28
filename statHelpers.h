@@ -2,7 +2,7 @@
 //
 //    FILE: statHelpers.ino
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.3
+// VERSION: 0.1.4
 // PURPOSE: Arduino library with a number of statistic helper functions.
 //    DATE: 2020-07-01
 //     URL: https://github.com/RobTillaart/statHelpers
@@ -11,12 +11,7 @@
 #include "Arduino.h"
 
 
-#define STATHELPERS_LIB_VERSION       (F("0.1.3"))
-
-
-// TODO
-// Look for optimizations
-// Look for ways to extend the scope
+#define STATHELPERS_LIB_VERSION               (F("0.1.4"))
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -548,3 +543,4 @@ void bigCombinations64(uint64_t n, uint64_t k, double &mantissa, uint64_t &expon
 
 
 // -- END OF FILE --
+

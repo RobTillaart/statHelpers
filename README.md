@@ -109,7 +109,7 @@ returns a double mantissa between 0 and 10, and an integer exponent.
 
 An experimental **bigFactorial(n)** calculation to get an idea of the big numbers. 
 it can calculate factorials up to an exponent of 4294967295 max.  100.000.000! can be 
-done in 38 minutes on an ESP32 @240 Mhz.  
+done in 38 minutes on an ESP32 at 240 MHz.  
 Maximum value for n is **518678059! ==  2.1718890e4294967292** a number that took ~10 hrs to calculate. 
 
 An experimental **bigPermutation(n, k)** calculation, to handle big numbers too. 
@@ -135,13 +135,16 @@ returns a double mantissa between 0 and 10, and an integer exponent.
 returns a double mantissa between 0 and 10, and an integer exponent. 
 
 
+## Operation
+
+See examples
+
+
 ## Future
 
 - code & example for get Nth Permutation
 - investigate valid range detection for a given (n, k) for combinations and permutations.
 - investigate a bigFloat class to do math for permutations and combinations to substantially larger values.
+- Look for optimizations
+- Look for ways to extend the scope
 
-
-## Operation
-
-See examples
