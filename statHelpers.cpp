@@ -69,6 +69,7 @@ Join the head and tail back together. The permutation one greater than 834266641
 // http://www.nayuki.io/page/next-lexicographical-permutation-algorithm
 
 // b = nextPermutation<char>(array, 100);
+/*
 template <typename T>
 bool nextPermutation(T * array,  uint16_t size)
 {
@@ -105,6 +106,7 @@ bool nextPermutation(T * array,  uint16_t size)
   }
   return true;
 }
+*/
 
 
 ///////////////////////////////////////////////////////////////////////////
