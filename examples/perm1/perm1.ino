@@ -13,6 +13,8 @@
 //  UNO no printing string length 10 ==> ~38763 milliseconds
 
 
+#include "statHelpers.h"
+
 char permstring[12] = "0123456789";    //  can be made slightly longer
 
 uint32_t start, stop;
@@ -72,4 +74,3 @@ void loop()
 
 
 //  -- END OF FILE --
-
