@@ -1,7 +1,7 @@
 //
 //    FILE: statHelpers.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.2.2
+// VERSION: 0.2.3
 // PURPOSE: Arduino library with a number of statistic helper functions.
 //    DATE: 2020-07-01
 //     URL: https://github.com/RobTillaart/statHelpers
@@ -283,6 +283,38 @@ double dSkipFactorial(uint32_t n, uint32_t skip)
     n -= skip;
   }
   return f;
+}
+
+
+///////////////////////////////////////////////////////////////////////////
+//
+//  TERMIAL  (e.g. 5? = 5+4+3+2+1)
+//
+
+//  up to 65534?
+uint32_t termial(uint16_t n)
+{
+  uint32_t t = n;
+  return (t * (t + 1)) / 2;
+}
+
+//  up to (2^32)?
+uint64_t termial64(uint32_t n)
+{
+  uint64_t t = n;
+  return (t * (t + 1)) / 2;
+}
+
+//  exact up to about 2^24 = 16,777,216 
+float termialFloat(float n)
+{
+  return (n * (n + 1)) / 2;
+}
+
+//  exact up to about 2^53 = 9,007,199,254,740,992
+double termialDouble(double n)
+{
+  return (n * (n + 1)) / 2;
 }
 
 
