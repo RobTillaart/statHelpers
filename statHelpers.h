@@ -155,17 +155,17 @@ double dSkipFactorial(uint32_t n, uint32_t skip);
 //  TERMIAL  (e.g. 5? = 5+4+3+2+1)
 //
 
-//  exact up to 65535
+//  exact up to n = 2^16 = 65.535
 uint32_t termial(uint16_t n);
 
-//  exact up to 2^32 = 4.294.967.296
+//  exact up to n = 2^32 = 4.294.967.295
 uint64_t termial64(uint32_t n);
 
-//  float  = 4 bit exact up to ~2^24 = 4.096.
+//  float  = 4 bit exact up to n = ~2^12 = ±5.792
 float termialFloat(float n);
 
 //  only if double (8 bit) is supported
-//  double = 8 bit exact up to ~2^53 = 94.906.265
+//  double = 8 bit exact up to n = ~2^26 = ±94.906.265
 double termialDouble(double n);
 
 //  option

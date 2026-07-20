@@ -22,14 +22,20 @@ void setup()
   Serial.println(STATHELPERS_LIB_VERSION);
   Serial.println();
 
-  for (float n = 1; n <= 51; n += 0.1)
+  //
+  //  prevent rounding effects by using integers as loop index.
+  //  effectively this loop is -25 => 25 step 0.1
+  for (int n = -250; n <= 250; n += 1)
   {
-    Serial.print(termial(n));
+    if (n < 0) Serial.print(-1 * (int32_t)termial(-n / 10));
+    else       Serial.print(termial(n / 10));
     Serial.print('\t');
-    Serial.print(termialFloat(n));
+    Serial.print(termialFloat(n / 10.0));
     Serial.println();
   }
   Serial.println();
+
+  Serial.println("done");
 }
 
 

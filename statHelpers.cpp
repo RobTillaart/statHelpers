@@ -291,29 +291,33 @@ double dSkipFactorial(uint32_t n, uint32_t skip)
 //  TERMIAL  (e.g. 5? = 5+4+3+2+1)
 //
 
-//  up to 65534?
 uint32_t termial(uint16_t n)
 {
+  if (n == 0) return 0;
   uint32_t t = n;
   return (t * (t + 1)) / 2;
 }
 
-//  up to (2^32)?
 uint64_t termial64(uint32_t n)
 {
+  if (n == 0) return 0;
   uint64_t t = n;
   return (t * (t + 1)) / 2;
 }
 
-//  exact up to about 2^24 = 16,777,216 
 float termialFloat(float n)
 {
+  if (n == 0) return 0;
+  //  make f(x) continuous.
+  if (n < 0) return -termialFloat(-n);
   return (n * (n + 1)) / 2;
 }
 
-//  exact up to about 2^53 = 9,007,199,254,740,992
 double termialDouble(double n)
 {
+  if (n == 0) return 0;
+  //  make f(x) continuous.
+  if (n < 0) return -termialDouble(-n);
   return (n * (n + 1)) / 2;
 }
 
